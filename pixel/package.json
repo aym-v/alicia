@@ -1,0 +1,13 @@
+{
+  "name": "pixel",
+  "version": "1.0.0",
+  "main": "pixel.js",
+  "scripts": {
+    "start": "node pixel.js"
+  },
+  "author": "Aymerick Valette",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
