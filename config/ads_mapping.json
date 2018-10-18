@@ -1,0 +1,17 @@
+{
+    "index_patterns": [
+        "ad*"
+    ],
+    "settings": {
+        "number_of_shards": 1
+    },
+    "mappings": {
+        "doc": {
+            "properties": {
+                "event": { "type": "keyword" },
+                "id": { "type": "text" },
+                "parameters": {"type": "object"}
+            }
+        }
+    }
+}
