@@ -15,15 +15,16 @@ services:
     volumes:
       - logs:/usr/share/filebeat/logs
       - ./config/filebeat.yml:/usr/share/filebeat/filebeat.yml
-  kibana:
-    image: docker.elastic.co/kibana/kibana:6.4.0
-    ports:
-      - 5601:5601
+  # kibana:
+  #   image: docker.elastic.co/kibana/kibana:6.4.0
+  #   ports:
+  #     - 5601:5601
   logstash:
     image: docker.elastic.co/logstash/logstash:6.4.2
     ports: 
       - 5044:5044
     volumes:
       - ./config/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+      - ./config/ads_mapping.json:/usr/share/logstash/ads_mapping.json
 volumes:
   logs:
