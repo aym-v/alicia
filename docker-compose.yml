@@ -6,6 +6,20 @@ services:
       - 3000:3000
     volumes:
       - logs:/app/logs
+  analytics:
+    build: ./analytics
+    ports:
+      - 4000:3000
+  postgres:
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: docker
+      POSTGRES_USER: docker
+      POSTGRES_DB: analytics
+    volumes:
+      - ./config/postgres_seed.sql:/docker-entrypoint-initdb.d/postgres_seed.sql
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:6.4.0
     ports: 
@@ -15,10 +29,10 @@ services:
     volumes:
       - logs:/usr/share/filebeat/logs
       - ./config/filebeat.yml:/usr/share/filebeat/filebeat.yml
-  # kibana:
-  #   image: docker.elastic.co/kibana/kibana:6.4.0
-  #   ports:
-  #     - 5601:5601
+  kibana:
+    image: docker.elastic.co/kibana/kibana:6.4.0
+    ports:
+      - 5601:5601
   logstash:
     image: docker.elastic.co/logstash/logstash:6.4.2
     ports: 
