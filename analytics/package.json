@@ -1,0 +1,15 @@
+{
+  "name": "analytics",
+  "version": "1.0.0",
+  "main": "analytics.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "author": "Aymerick Valette",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3",
+    "pg": "^7.5.0",
+    "uuid": "^3.3.2"
+  }
+}
