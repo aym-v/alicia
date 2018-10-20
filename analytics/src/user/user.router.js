@@ -13,14 +13,14 @@ router.post('/user/register', async (req, res) => {
     }
 });
 
-router.post('/user/login', async (req, res) => {
+router.post('/user/authenticate', async (req, res) => {
     const { user, password } = req.body;
     try {
-        const token = await model.login(user, password);
-        res.json(token)
+        const token = await model.authenticate(user, password);
+        res.json(token);
     } catch (err) {
         res.status(500).end()
-    } 
-})
+    }
+});
 
 module.exports = router

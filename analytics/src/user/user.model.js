@@ -18,18 +18,22 @@ const create = async (user, password) => {
     return query
 }
 
-const login = async (user, password) => {
+const authenticate = async (user, password) => {
     const password_hash = enryptPassword(password, user);
     const query = await db.postgres('SELECT * FROM users WHERE username = $1', [user]);
-    if (query.rows[0] && query.rows[0].password_hash === password_hash) {
+    const auth = query.rows[0] && query.rows[0].password_hash === password_hash;
+    if (auth) {
         const token = signToken();
-        return { status: 'SUCCESS', token };
+        return { auth, token };
     } else {
-        return { status: 'FAILURE' }
+        return { auth }
     }
 }
 
+const authorize = key => jwt.verify(key, token.secret);
+
 module.exports = {
     create,
-    login
+    authenticate,
+    authorize
 }
