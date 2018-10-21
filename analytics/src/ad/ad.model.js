@@ -7,18 +7,23 @@ const create = async (name, width, height) => {
     return id
 };
 
-const remove = async id => {
-    const query = await db.postgres('DELETE FROM ads WHERE id = $1', [id]);
-    return query;
+const select = async id => {
+    const query = await db.postgres('SELECT * FROM ads WHERE id = $1', [id]);
+    const row = query.rows[0];
+    return row
 };
 
-const update = async (id, name, width, height) => {
-    const query = await db.postgres('UPDATE ads SET ad_name = $1, width = $2, height = $3 WHERE id = $4', [name, width, height, id]);
-    return query
+const update = async (id, name, width, height) => await db.postgres('UPDATE ads SET ad_name = $1, width = $2, height = $3 WHERE id = $4', [name, width, height, id]);
+const remove = async id => await db.postgres('DELETE FROM ads WHERE id = $1', [id]);
+const selectAll = async () => {
+    const query = await db.postgres('SELECT * FROM ads');
+    return query.rows
 }
 
 module.exports = {
     create,
+    select,
+    update,
     remove,
-    update
+    selectAll
 }

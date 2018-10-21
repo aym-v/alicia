@@ -13,6 +13,24 @@ router.post('/ads', async (req, res) => {
     }
 });
 
+router.get('/ads', async (req, res) => {
+    try {
+        const ads = await model.selectAll();
+        res.json(ads)
+    } catch (err) {
+        res.status(500).end();
+    }
+})
+
+router.get('/ads/:id', async (req, res) => {
+    try {
+        const query = await model.select(req.params.id);
+        res.json(query);
+    } catch (err) {
+        res.status(500).end();
+    }
+});
+
 router.delete('/ads/:id', async (req, res) => {
     try {
         const query = await model.remove(req.params.id);
