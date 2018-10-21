@@ -5,7 +5,7 @@ const app = express();
 const routers = [
     require('./user/user.router'),
     require('./ad/ad.router'),
-    // require('./event/event.router')
+    require('./event/event.router')
 ];
 
 app.use(bodyParser.json());
