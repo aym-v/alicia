@@ -24,6 +24,13 @@ services:
     image: docker.elastic.co/elasticsearch/elasticsearch:6.4.0
     ports: 
       - 9200:9200
+  logstash:
+    image: docker.elastic.co/logstash/logstash:6.4.2
+    ports: 
+      - 5044:5044
+    volumes:
+      - ./config/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+      - ./config/ads_mapping.json:/usr/share/logstash/ads_mapping.json
   filebeat:
     image: docker.elastic.co/beats/filebeat:6.4.2
     volumes:
@@ -33,12 +40,5 @@ services:
     image: docker.elastic.co/kibana/kibana:6.4.0
     ports:
       - 5601:5601
-  logstash:
-    image: docker.elastic.co/logstash/logstash:6.4.2
-    ports: 
-      - 5044:5044
-    volumes:
-      - ./config/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
-      - ./config/ads_mapping.json:/usr/share/logstash/ads_mapping.json
 volumes:
   logs:
