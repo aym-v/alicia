@@ -4,7 +4,8 @@ const jwt = require('jsonwebtoken');
 const app = express();
 const routers = [
     require('./user/user.router'),
-    require('./ad/ad.router')
+    require('./ad/ad.router'),
+    // require('./event/event.router')
 ];
 
 app.use(bodyParser.json());
@@ -20,8 +21,11 @@ app.use((req, res, next) => {
     }
     
 });
-app.use('/', routers[0]);
-app.use('/', routers[1]);
+
+
+for (const router of routers) {
+    app.use('/', router);
+}
 app.get('/hello',(req, res)=>res.send('he'))
 
 app.listen(3000);
