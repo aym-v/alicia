@@ -1,0 +1,13 @@
+.login {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.login__logo {
+    background: url(../../assets/logo.png) center / contain no-repeat;
+    width: 30px;
+    height: 30px;
+    margin-top: 64px;
+}
