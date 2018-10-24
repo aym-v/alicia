@@ -5,7 +5,12 @@ const Login = () => (
     <div className="login">
         <div className="login__logo"></div>
         <div className="login__modal">
-
+            <p className="subtitle">Login</p>
+            <form>  
+                <input autoComplete="off" placeholder="username" className="caption" id="username" type="search"></input>
+                <input placeholder="password" className="caption" id="password" type="password"></input>
+            </form>
+            <button>Enter</button>
         </div>
     </div>
 )
