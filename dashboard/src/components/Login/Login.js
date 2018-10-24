@@ -3,8 +3,8 @@ import './Login.css'
 
 const Login = () => (
     <div className="login">
-        <div className="login__logo"></div>
-        <div className="login__modal">
+        <div className="login__logo logo"></div>
+        <div className="login__modal modal">
             <p className="subtitle">Login</p>
             <form>  
                 <input autoComplete="off" placeholder="username" className="caption" id="username" type="search"></input>

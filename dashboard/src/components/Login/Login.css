@@ -16,17 +16,12 @@
 }
 
 .login__modal {
-    width: 400px;
     height: 320px;
-    background: white;
-    box-shadow: 0 15px 33px 0 rgba(0,0,0,0.11);
-    border-radius: 8px;
     display: flex;
     align-items: center;
     flex-direction: column;
     transform: scale(0.99);
     transition: .225s var(--ease);
-    animation: appear .3s .3s backwards;
 }
 
 .login__modal:hover {
