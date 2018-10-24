@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'AvenirNextDemi';
+    src: url('./assets/AvenirNext-DemiBold.woff2') format('woff2'),
+        url('./assets/AvenirNext-DemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AvenirNextMedium';
+    src: url('./assets/AvenirNext-Medium.woff2') format('woff2'),
+        url('./assets/AvenirNext-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AvenirNext';
+    src: url('./assets/AvenirNext-Regular.woff2') format('woff2'),
+        url('./assets/AvenirNext-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
