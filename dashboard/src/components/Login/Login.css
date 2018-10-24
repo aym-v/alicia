@@ -1,6 +1,8 @@
 .login {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
     width: 100vw;
     height: 100vh;
 }
@@ -9,5 +11,63 @@
     background: url(../../assets/logo.png) center / contain no-repeat;
     width: 30px;
     height: 30px;
-    margin-top: 64px;
+    position: absolute;
+    top: 128px;
+}
+
+.login__modal {
+    width: 400px;
+    height: 320px;
+    background: white;
+    box-shadow: 0 15px 33px 0 rgba(0,0,0,0.11);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transform: scale(0.99);
+    transition: .225s var(--ease);
+    animation: appear .3s .3s backwards;
+}
+
+.login__modal:hover {
+    box-shadow: 0 20px 40px 0 rgba(0,0,0,0.20);
+    transform: none;
+}
+
+.login__modal > .subtitle {
+    height: 32%;
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.login__modal > form {
+    height: 48%;
+    margin: 0;
+}
+
+.login__modal > form > input {
+    width: 100%;
+    outline: none;
+}
+
+.login__modal > button {
+    width: 100%;
+    flex: auto;
+    border: unset;
+    border-top: 1px solid #EAEBF0;
+    cursor: pointer;
+}
+
+.login__modal > button:hover {
+    background: #fafafa;
+}
+
+.login__modal > button:active {
+    background: #f5f5f5;
+    font-size: 13px;
+}
+
+.login__modal > button:focus {
+    outline: none;
 }

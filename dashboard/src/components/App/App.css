@@ -1,8 +1,59 @@
 :root {
     --light-blue: #F6F7FB;
+    --ease: cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 body {
     margin: 0;
     background-color: var(--light-blue);
+}
+
+.subtitle {
+    font: 16px 'AvenirNextDemi';
+}
+
+.caption {
+    opacity: 0.87;
+    font: 12px 'AvenirNextMedium';
+    color: black;
+    letter-spacing: 0.4px;
+    line-height: 16px;
+}
+
+input {
+    border: 1px solid #EAEBF0;
+    border-radius: 100px;
+    padding: 12px;
+    margin: 8px 0 8px;
+    background: #F6F7FB;
+    color: black;
+}
+
+input:hover {
+    border: 1px solid #D0D5ED;
+}
+
+input:focus {
+    border: 2px solid #9DB1FF;
+}
+
+input::placeholder {
+    color: #9e9e9e;
+    transition: .15s var(--ease);
+}
+
+input:focus::placeholder {
+    transform: translateX(5px);
+    color: #BDBDBD;
+}
+
+button {
+    font-family: 'AvenirNextMedium';
+    font-size: 14px;
+    color: rgba(0,0,0,0.22);
+    letter-spacing: 0.75px;
+    text-transform: uppercase;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    transition: .15s var(--ease);
 }
