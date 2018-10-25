@@ -20,7 +20,7 @@ body {
     line-height: 16px;
 }
 
-input {
+.form-input {
     border: 2px solid #EAEBF0;
     border-radius: 100px;
     padding: 12px;
@@ -30,20 +30,20 @@ input {
     transition: .15s var(--ease);
 }
 
-input:hover {
+.form-input:hover {
     border: 2px solid #D0D5ED;
 }
 
-input:focus {
+.form-input:focus {
     border: 2px solid #9DB1FF;
 }
 
-input::placeholder {
+.form-input::placeholder {
     color: #9e9e9e;
     transition: .15s var(--ease);
 }
 
-input:focus::placeholder {
+.form-input:focus::placeholder {
     transform: translateX(5px);
     color: #dadada;
 }
