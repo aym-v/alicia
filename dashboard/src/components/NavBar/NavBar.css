@@ -1,0 +1,70 @@
+.navbar {
+    height: 80px;
+    background: white;
+    width: 100vw;
+    border-bottom: 1px solid #EAEBF0;
+    display: grid;
+    grid-template-columns: 80px auto 240px;
+}
+
+.navbar__logo {
+    height: 100%;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #EAEBF0;
+    cursor: pointer;
+}
+
+.navbar__logo .logo {
+    transition: .15s var(--ease);
+}
+
+.navbar__logo:hover .logo {
+    transform: scale(1.1);
+}
+
+.navbar__search {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.navbar__search > i {
+    display: flex;
+    align-items: center;
+    padding: 0 32px 0 32px;
+    color: #BDCAD0;
+}
+
+.navbar__input {
+    border: 0;
+    outline: none;
+    background: none;
+    height: 100%;
+    font-family: 'AvenirNextMedium';
+    font-size: 12px;
+    letter-spacing: 0.4px;
+    line-height: 16px;
+    width: 100%;
+}
+
+.navbar__input::placeholder {
+    opacity: 0.87;
+    color: #CFD8DC;
+    transition: .15s var(--ease);
+}
+
+.navbar__input:hover {
+    border: 0;
+}
+
+.navbar__input:focus {
+    border: 0;
+}
+
+.navbar__input:focus::placeholder {
+    transform: translateX(8px);
+    color: #dadada;
+}
