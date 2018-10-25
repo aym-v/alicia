@@ -21,16 +21,17 @@ body {
 }
 
 input {
-    border: 1px solid #EAEBF0;
+    border: 2px solid #EAEBF0;
     border-radius: 100px;
     padding: 12px;
     margin: 8px 0 8px;
     background: #F6F7FB;
     color: black;
+    transition: .15s var(--ease);
 }
 
 input:hover {
-    border: 1px solid #D0D5ED;
+    border: 2px solid #D0D5ED;
 }
 
 input:focus {
@@ -44,7 +45,7 @@ input::placeholder {
 
 input:focus::placeholder {
     transform: translateX(5px);
-    color: #BDBDBD;
+    color: #dadada;
 }
 
 button {
@@ -55,7 +56,6 @@ button {
     text-transform: uppercase;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
-    transition: .15s var(--ease);
 }
 
 .modal {
