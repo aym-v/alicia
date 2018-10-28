@@ -1,0 +1,29 @@
+.add-button {
+    width: 64px;
+    height: 64px;
+    position: fixed;
+    bottom: 80px;
+    right: 80px;
+    background: #FF1744;
+    box-shadow: 0 3px 14px 0 rgba(59,59,48,0.33);
+    border-radius: 100px;
+    color: white;
+    font-family: 'AvenirNextMedium';
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: .225s var(--ease);
+}
+
+.add-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px 0 rgba(59,59,48,0.33);
+}
+
+.add-button:active {
+    transform: scale(1);
+    transition: none;
+    box-shadow: 0 3px 10px 0 rgba(59,59,48,0.33);
+}
