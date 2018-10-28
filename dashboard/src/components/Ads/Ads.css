@@ -1,0 +1,94 @@
+.ads__header, .ads__list > .ads__ad {
+    display: grid;
+    grid-template-columns: 256px 310px repeat(2, 80px) auto repeat(2, 80px);
+    grid-template-rows: 80px;
+    padding-left: 40px;
+    padding-right: 40px;
+    align-items: center;
+}
+
+.ads__header {
+    opacity: 0.87;
+    font-family: 'AvenirNextMedium';
+    font-size: 12px;
+    color: #BDBDBD;
+    letter-spacing: 0.4px;
+}
+
+.ads__ad:first-child {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.ads__ad:last-child {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.ads__ad:not(:first-child) {
+    border-top: 1px solid #EAEBF0;
+}
+
+.ads__ad {
+    background: white;
+    justify-self: center;
+    opacity: 0.87;
+    font-family: 'AvenirNext';
+    font-size: 14px;
+    color: #000000;
+    letter-spacing: 0.25px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: .15s var(--ease);
+}
+
+.ads__ad:hover {
+    transform: scale(1.008);
+    box-shadow: 0 15px 33px 0 rgba(0,0,0,0.11);
+}
+
+.ads__ad:active {
+    background: #F5F5F5;
+    transition: none;
+    transform: none;
+    box-shadow: 0 10px 23px 0 rgba(0,0,0,0.11);
+}
+
+.ads__ad-name {
+    font-family: 'AvenirNextMedium';
+    font-size: 16px;
+    letter-spacing: 0.44px;
+    line-height: 28px;
+}
+
+.ads__ad-id {
+    font-family: 'AvenirNextMedium';
+    font-size: 10px;
+    color: #BDBDBD;
+    letter-spacing: 1.5px;
+    line-height: 16px;
+    text-transform: uppercase;
+}
+
+.ads__ad-edit {
+    grid-column-start: -3;
+}
+
+.row-icon {
+    color: #DEDEDE;
+    justify-self: center;
+    border-radius: 100px;
+    transition: .15s var(--ease);
+}
+
+.row-icon > i {
+    padding: 8px;
+}
+
+.row-icon:hover {
+    background: #FAFAFA;
+}
+
+.row-icon:active {
+    background: #F5F5F5;
+}
