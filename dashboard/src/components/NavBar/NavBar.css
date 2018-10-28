@@ -7,6 +7,7 @@
     grid-template-columns: 80px auto fit-content(100%);
     grid-auto-rows: auto;
     user-select: none;
+    transition: .15s var(--ease);
 }
 
 .navbar > div:hover {
@@ -145,7 +146,7 @@
     align-items: center;
     display: flex;
     opacity: 0.87;
-    font-family: 'AvenirNextMedium';
+    font-family: 'AvenirNext';
     font-size: 14px;
     color: #757575;
     transition: .195s var(--ease);
