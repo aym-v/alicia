@@ -42,16 +42,9 @@
     transition: .15s var(--ease);
 }
 
-.ads__ad:hover {
-    transform: scale(1.008);
-    box-shadow: 0 15px 33px 0 rgba(0,0,0,0.11);
-}
-
 .ads__ad:active {
     background: #F5F5F5;
-    transition: none;
     transform: none;
-    box-shadow: 0 10px 23px 0 rgba(0,0,0,0.11);
 }
 
 .ads__ad-name {
