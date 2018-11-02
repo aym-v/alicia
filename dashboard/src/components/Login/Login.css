@@ -43,7 +43,6 @@
 
 .login__modal > form > input {
     width: 100%;
-    outline: none;
 }
 
 .login__modal > button {
