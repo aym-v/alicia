@@ -39,12 +39,16 @@
     letter-spacing: 0.25px;
     line-height: 20px;
     cursor: pointer;
-    transition: .15s var(--ease);
 }
 
+.ads__ad:hover {
+    background: #FAFAFA;
+    transform: none;
+}
 .ads__ad:active {
     background: #F5F5F5;
     transform: none;
+    transition: none;
 }
 
 .ads__ad-name {
@@ -57,7 +61,6 @@
 .ads__ad-id {
     font-family: 'AvenirNextMedium';
     font-size: 10px;
-    color: #BDBDBD;
     letter-spacing: 1.5px;
     line-height: 16px;
     text-transform: uppercase;
@@ -79,9 +82,9 @@
 }
 
 .row-icon:hover {
-    background: #FAFAFA;
+    background: #F5F5F5;
 }
 
 .row-icon:active {
-    background: #F5F5F5;
+    background: #F7F7F7;
 }
