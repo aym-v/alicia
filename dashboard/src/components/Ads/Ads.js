@@ -1,4 +1,5 @@
 import React from 'react'
+import NewAd from '../NewAd/NewAd'
 import './Ads.css'
 
 const Ads = ({ads=[
@@ -41,6 +42,7 @@ const Ads = ({ads=[
                 )
             )}
         </div>
+        <NewAd />
     </div>
 )
 
