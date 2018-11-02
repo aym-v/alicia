@@ -28,6 +28,7 @@ body {
     background: #F6F7FB;
     color: black;
     transition: .15s var(--ease);
+    outline: none;
 }
 
 .form-input:hover {
