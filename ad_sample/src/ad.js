@@ -1,12 +1,10 @@
-import track from './track'
+import event from './tracking'
 
 const ad = {
-    frame: {
-        x: document.body.clientWidth,
-        y: document.body.clientHeight,
-    }
+    frame: document.getElementById('container'),
+    landingPage: 'https://nike.com'
 };
 
-track('view');
-
-document.body.addEventListener('touchstart', event => track('click', { x: event.touches[0].clientX/ad.frame.x*100, y: event.touches[0].clientY/ad.frame.y*100 }));
+event.track('view');
+event.watchSurface(ad.frame);
+event.listenToClick(ad.frame, ad.landingPage);
