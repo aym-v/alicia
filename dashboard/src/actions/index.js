@@ -1,4 +1,4 @@
-const AUTHENTICATE = 'AUTHENTICATE';
+export const AUTHENTICATE = 'AUTHENTICATE';
 const authenticate = (username, password) => {
     return {
         type: AUTHENTICATE,
@@ -7,7 +7,7 @@ const authenticate = (username, password) => {
     }
 }
 
-const AUTHENTICATED = 'AUTHENTICATED';
+export const AUTHENTICATED = 'AUTHENTICATED';
 const authenticated = (token) => {
     console.log(token)
     return {
@@ -17,20 +17,16 @@ const authenticated = (token) => {
 }
 
 export const login = (username, password) => {
-    return (dispatch) => {
+    return async (dispatch) => {
         dispatch(authenticate(username, password))
-        return fetch('http://localhost:4000/user/authenticate', {
-            method: 'POST',
+        const response = await fetch('http://127.0.0.1:4000/user/authenticate', {
+            method: 'post',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Accept': '*/*'
             },
             body: JSON.stringify({ username, password })
-        })
-            .then(
-                response => console.log(response)
-            )
-            .then(
-                json => authenticated(json)
-            )
+        });
+        console.log(await response.json())
     }
 }
