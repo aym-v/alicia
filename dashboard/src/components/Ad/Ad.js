@@ -17,11 +17,15 @@ const Ad = ({ad = {
             <div className="ad__caption">Ad name</div>
             <div className="ad__name">{ad.name}</div>
             <div className="ad__events-title">Events</div>
+            <header className="ads__header">
+                <div>name</div>
+                <div>occurences</div>
+            </header>
             <div className="ad__events">
                 {ad.events.map(
                 (event, i) => (
                     <div key={i} className="events__event">
-                        <div className="events__event-key">{event.key}</div>
+                        <div className="events__event-name">{event.key}</div>
                         <div className="events__event-count">{event.doc_count}</div>
                         <div className="events__event-edit row-icon"><i className="material-icons">edit</i></div>
                         <div className="events__event-delete row-icon"><i className="material-icons">delete</i></div>

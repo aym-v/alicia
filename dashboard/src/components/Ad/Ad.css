@@ -25,3 +25,64 @@
     line-height: 24px;
     margin-top: 32px;
 }
+
+.ad__header, .ad__events > .events__event {
+    display: grid;
+    grid-template-columns: 256px 310px auto repeat(2, 80px);
+    grid-template-rows: 80px;
+    padding-left: 40px;
+    padding-right: 40px;
+    align-items: center;
+}
+
+
+.events__event:first-child {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.events__event:last-child {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.events__event:not(:first-child) {
+    border-top: 1px solid #EAEBF0;
+}
+
+.events__event {
+    background: white;
+    justify-self: center;
+    opacity: 0.87;
+    font-family: 'AvenirNext';
+    font-size: 14px;
+    color: #000000;
+    letter-spacing: 0.25px;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+.events__event:hover {
+    background: #FAFAFA;
+    transform: none;
+}
+.events__event:active {
+    background: #F5F5F5;
+    transform: none;
+    transition: none;
+}
+
+.events__event-name {
+    font-family: 'AvenirNextMedium';
+    font-size: 16px;
+    letter-spacing: 0.44px;
+    line-height: 28px;
+}
+
+.events__event-edit {
+    grid-column-start: -3;
+}
+
+.events__event-delete {
+    grid-column-start: -2;
+}
