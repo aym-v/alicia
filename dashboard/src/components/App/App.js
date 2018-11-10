@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Ad from '../Ad/Ad'
 import Ads from '../Ads/Ads'
-import Login from '../Login/Login'
+import LoginContainer from '../../containers/LoginContainer'
 import Register from '../Register/Register'
 import NavBar from '../NavBar/NavBar'
 import AddButton from '../AddButton/AddButton'
@@ -13,7 +13,7 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Route path="/login" component={Login} />
+          <Route path="/login" component={LoginContainer} />
           <Route path="/register" component={Register} />
           <Route path="/ads" component={NavBar} />
           <Route path="/ads" component={AddButton} />
