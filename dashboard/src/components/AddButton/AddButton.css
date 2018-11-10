@@ -17,9 +17,17 @@
     transition: .225s var(--ease);
 }
 
+.add-button > div {
+    transition: .3s var(--ease);
+}
+
 .add-button:hover {
     transform: scale(1.1);
     box-shadow: 0 10px 20px 0 rgba(59,59,48,0.33);
+}
+
+.add-button:hover > div {
+    transform: rotateZ(90deg);
 }
 
 .add-button:active {
