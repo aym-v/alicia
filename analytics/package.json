@@ -8,6 +8,7 @@
   "author": "Aymerick Valette",
   "license": "MIT",
   "dependencies": {
+    "cors": "^2.8.5",
     "elasticsearch": "^15.1.1",
     "express": "^4.16.3",
     "jsonwebtoken": "^8.3.0",

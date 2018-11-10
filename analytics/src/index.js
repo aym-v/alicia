@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require('cors');
 const bodyParser = require("body-parser");
 const jwt = require('jsonwebtoken'); 
 const app = express();
@@ -9,6 +10,7 @@ const routers = [
 ];
 
 app.use(bodyParser.json());
+app.use(cors());
 app.use((req, res, next) => {
     if (req.originalUrl === '/user/register' || req.originalUrl === '/user/authenticate') {
         return next();
@@ -26,6 +28,5 @@ app.use((req, res, next) => {
 for (const router of routers) {
     app.use('/', router);
 }
-app.get('/hello',(req, res)=>res.send('he'))
 
 app.listen(3000);
