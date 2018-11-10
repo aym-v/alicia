@@ -77,3 +77,8 @@ button {
     padding-right: 80px;
     padding-top: 40px;
 }
+
+.header {
+    font: 36px 'AvenirNextDemi';
+    margin-top: 36px;
+}

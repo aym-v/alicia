@@ -21,6 +21,7 @@ const Ads = ({ads=[
 		"height": 309
 	}]}) => (
     <div className="main-container ads">
+        <div className="header">Ads</div>
         <header className="ads__header">
             <div>name</div>
             <div>id</div>
