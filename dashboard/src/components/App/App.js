@@ -7,6 +7,7 @@ import Register from '../Register/Register'
 import NavBar from '../NavBar/NavBar'
 import AddButton from '../AddButton/AddButton'
 import './App.css'
+import PrivateRoute from '../PrivateRoute/PrivateRoute';
 
 class App extends Component {
   render() {
@@ -15,11 +16,11 @@ class App extends Component {
         <div>
           <Route path="/login" component={LoginContainer} />
           <Route path="/register" component={Register} />
-          <Route path="/ads" component={NavBar} />
-          <Route path="/ads" component={AddButton} />
+          <PrivateRoute path="/ads" component={NavBar} />
+          <PrivateRoute path="/ads" component={AddButton} />
           <Switch>
-            <Route path="/ads/:id" component={Ad} />
-            <Route path="/ads" component={Ads} />
+            <PrivateRoute path="/ads/:id" component={Ad} />
+            <PrivateRoute path="/ads" component={Ads} />
           </Switch>
         </div>
       </Router>
