@@ -10,9 +10,29 @@ class Login extends Component {
         }
     }
 
+    componentDidUpdate() {
+        if (!this.props.error && this.props.token) {
+            localStorage.setItem('token',this.props.token);
+            this.props.history.push("/ads");
+        } 
+      }
+
     render() {
+        let button;
+        if (this.props.isFetching) {
+            button = (
+                <div className="fetchbar">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            )
+        } else {
+            button = 'Enter'
+        }
+
         return (
-            <div className="login">
+            <div className={`login ${this.props.error ? "failure" : "success"}`}>
             <div className="login__logo logo"></div>
             <div className="login__modal modal">
                 <p className="subtitle">Login</p>
@@ -20,7 +40,7 @@ class Login extends Component {
                     <input onChange={(event) => this.setState({username: event.target.value})} autoComplete="off" placeholder="username" className="form-input caption" id="username" type="search" value={this.state.username}></input>
                     <input onChange={(event) => this.setState({password: event.target.value})} placeholder="password" className="form-input caption" id="password" type="password" value={this.state.password}></input>
                 </form>
-                <button onClick={() => this.props.onClick(this.state.username, this.state.password)}>Enter</button>
+                <button onClick={() => this.props.onClick(this.state.username, this.state.password)}>{button}</button>
             </div>
         </div>
         )
