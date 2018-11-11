@@ -3,7 +3,8 @@ import { AUTHENTICATION, AUTHENTICATION_SUCCESS, AUTHENTICATION_ERROR } from '..
 const initialState = {
     auth: {
         isFetching: false,
-        token: false
+        token: false,
+        error: false
     }
 }
 
@@ -14,14 +15,17 @@ const reducer = (previousState = initialState, action) => {
                 ...previousState,
                 auth: {
                     ...previousState.auth,
-                    isFetching: true
+                    isFetching: true,
+                    error: false
                 }
             }
         case AUTHENTICATION_SUCCESS:
             return {
                 ...previousState,
                 auth: {
+                    ...previousState.auth,
                     isFetching: false,
+                    error: false,
                     token: action.token
                 }
             }
@@ -29,8 +33,10 @@ const reducer = (previousState = initialState, action) => {
             return {
                 ...previousState,
                 auth: {
+                    ...previousState.auth,
                     isFetching: false,
-                    token: false
+                    token: false,
+                    error: true
                 }
             }
         default:

@@ -5,6 +5,7 @@ import { login } from '../actions'
 const mapStateToProps = state => ({
     isFetching: state.auth.isFetching,
     token: state.auth.token,
+    error: state.auth.error
 })
 
 const mapDispatchToProps = (dispatch) => {
