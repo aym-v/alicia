@@ -57,6 +57,8 @@ button {
     text-transform: uppercase;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
+    display: flex;
+    justify-content: center;
 }
 
 .modal {
@@ -81,4 +83,38 @@ button {
 .header {
     font: 36px 'AvenirNextDemi';
     margin-top: 36px;
+}
+
+.fetchbar {
+    display: flex;
+    justify-content: space-between;
+    width: 36px;
+}
+
+.fetchbar > div {
+    border-radius: 100px;
+    width: 8px;
+    height: 8px;
+    background: #EAEAEA;
+    animation-name: fetch-pop;
+    animation-duration: .9s;
+    animation-timing-function: var(--ease);
+    animation-iteration-count: infinite;
+}
+
+.fetchbar > :nth-child(2) {
+    animation-delay: .1s;
+}
+
+.fetchbar > :nth-child(3) {
+    animation-delay: .2s;
+}
+
+@keyframes fetch-pop {
+    0%, 100% {
+        transform: none;
+    } 
+    50% {
+        transform: translateY(-150%)
+    }
 }
