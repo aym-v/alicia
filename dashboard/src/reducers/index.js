@@ -1,21 +1,41 @@
-import { AUTHENTICATE, AUTHENTICATED } from '../actions'
+import { AUTHENTICATION, AUTHENTICATION_SUCCESS, AUTHENTICATION_ERROR } from '../actions'
 
-const reducer = (previousState, action) => {
+const initialState = {
+    auth: {
+        isFetching: false,
+        token: false
+    }
+}
+
+const reducer = (previousState = initialState, action) => {
     switch (action.type) {
-        case AUTHENTICATE:
+        case AUTHENTICATION:
             return {
                 ...previousState,
-                authenticating: true
+                auth: {
+                    ...previousState.auth,
+                    isFetching: true
+                }
             }
-        case AUTHENTICATED:
+        case AUTHENTICATION_SUCCESS:
             return {
                 ...previousState,
-                authenticating: false
+                auth: {
+                    isFetching: false,
+                    token: action.token
+                }
+            }
+        case AUTHENTICATION_ERROR:
+            return {
+                ...previousState,
+                auth: {
+                    isFetching: false,
+                    token: false
+                }
             }
         default:
             return previousState
     }
-    return previousState
 }
 
 export default reducer
