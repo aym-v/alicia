@@ -2,7 +2,12 @@ import { connect } from 'react-redux'
 import Login from '../components/Login/Login'
 import { login } from '../actions'
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapStateToProps = state => ({
+    isFetching: state.auth.isFetching,
+    token: state.auth.token,
+})
+
+const mapDispatchToProps = (dispatch) => {
     return {
         onClick: (username, password) => {
             dispatch(login(username, password))
@@ -11,6 +16,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 }
 
 export default connect(
-    null,
+    mapStateToProps,
     mapDispatchToProps
 )(Login)
