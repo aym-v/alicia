@@ -65,3 +65,7 @@
 .login__modal > button:focus {
     outline: none;
 }
+
+.failure .login__modal {
+    border: 2px solid #f06292;
+}
