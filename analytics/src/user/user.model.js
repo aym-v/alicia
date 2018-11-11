@@ -26,7 +26,7 @@ const authenticate = async (user, password) => {
         const token = signToken();
         return { auth, token };
     } else {
-        return { auth }
+        return { auth: false }
     }
 }
 

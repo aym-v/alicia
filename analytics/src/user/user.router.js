@@ -16,8 +16,8 @@ router.post('/user/register', async (req, res) => {
 router.post('/user/authenticate', async (req, res) => {
     const { user, password } = req.body;
     try {
-        const token = await model.authenticate(user, password);
-        res.json(token);
+        const auth = await model.authenticate(user, password);
+        res.json(auth);
     } catch (err) {
         res.status(500).end()
     }
