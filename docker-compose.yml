@@ -10,12 +10,6 @@ services:
     build: ./analytics
     ports:
       - 4000:3000
-  dashboard:
-    build: ./dashboard
-    ports:
-      - 3030:3000
-    volumes:
-      - ./dashboard:/app
   postgres:
     image: postgres
     ports:
