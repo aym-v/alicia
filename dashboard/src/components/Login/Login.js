@@ -12,10 +12,16 @@ class Login extends Component {
 
     componentDidUpdate() {
         if (!this.props.error && this.props.token) {
-            localStorage.setItem('token',this.props.token);
+            localStorage.setItem('token', this.props.token);
             this.props.history.push("/ads");
-        } 
-      }
+        }
+    }
+
+    handleKeyDown(key) {
+        if (key.key === "Enter") {
+            this.props.onClick(this.state.username, this.state.password)
+        }
+    }
 
     render() {
         let button;
@@ -32,17 +38,17 @@ class Login extends Component {
         }
 
         return (
-            <div className={`login ${this.props.error ? "failure" : "success"}`}>
-            <div className="login__logo logo"></div>
-            <div className="login__modal modal">
-                <p className="subtitle">Login</p>
-                <form>  
-                    <input onChange={(event) => this.setState({username: event.target.value})} autoComplete="off" placeholder="username" className="form-input caption" id="username" type="search" value={this.state.username}></input>
-                    <input onChange={(event) => this.setState({password: event.target.value})} placeholder="password" className="form-input caption" id="password" type="password" value={this.state.password}></input>
-                </form>
-                <button onClick={() => this.props.onClick(this.state.username, this.state.password)}>{button}</button>
+            <div className={`login ${this.props.error ? "failure" : "success"}`} onKeyDown={this.handleKeyDown.bind(this)}>
+                <div className="login__logo logo"></div>
+                <div className="login__modal modal">
+                    <p className="subtitle">Login</p>
+                    <form>
+                        <input onChange={(event) => this.setState({ username: event.target.value })} autoComplete="off" placeholder="username" className="form-input caption" id="username" type="search" value={this.state.username}></input>
+                        <input onChange={(event) => this.setState({ password: event.target.value })} placeholder="password" className="form-input caption" id="password" type="password" value={this.state.password}></input>
+                    </form>
+                    <button onClick={() => this.props.onClick(this.state.username, this.state.password)}>{button}</button>
+                </div>
             </div>
-        </div>
         )
     }
 }
