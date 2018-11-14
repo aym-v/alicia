@@ -1,4 +1,4 @@
-import { AUTHENTICATION, AUTHENTICATION_SUCCESS, AUTHENTICATION_ERROR } from '../actions'
+import { AUTHENTICATION, AUTHENTICATION_SUCCESS, AUTHENTICATION_ERROR, LOGOUT } from '../actions'
 
 const initialState = {
     auth: {
@@ -38,6 +38,11 @@ const reducer = (previousState = initialState, action) => {
                     token: false,
                     error: true
                 }
+            }
+        case LOGOUT:
+            return {
+                ...previousState,
+                auth: initialState.auth,
             }
         default:
             return previousState

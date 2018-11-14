@@ -16,6 +16,11 @@ const authenticationError = () => ({
     type: AUTHENTICATION_ERROR
 })
 
+export const LOGOUT = 'LOGOUT';
+export const logout = () => ({
+    type: LOGOUT
+})
+
 export const login = (user, password) => {
     return async (dispatch) => {
         dispatch(authentication(user, password))

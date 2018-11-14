@@ -15,6 +15,10 @@ class NavBar extends Component {
             window.addEventListener('click', this.handleGlobalClick)
         } else {
             window.removeEventListener('click', this.handleGlobalClick);
+        } if (!this.props.token) {
+            window.removeEventListener('click', this.handleGlobalClick);
+            console.log('hey')
+            this.props.history.push("/login");
         }
     }
 
@@ -45,7 +49,7 @@ class NavBar extends Component {
                     <i className="material-icons">search</i>
                     <input className="navbar__input" placeholder="Search..." type="search"></input>
                 </div>
-                <div onClick={this.triggerDropdown} onBlur={this.triggerDropdown} className="navbar__profile">
+                <div onClick={this.triggerDropdown} className="navbar__profile">
                     <div className="navbar__username">Hi, {user}</div>
                     <div className="navbar__dropdown">
                         <img src={picture} alt="profile" className="navbar__picture"></img>
@@ -53,7 +57,7 @@ class NavBar extends Component {
                     </div>
                 </div>
                 <div className="navbar__dropdown-menu">
-                    <div className="navbar__signout"><i className="material-icons">exit_to_app</i>Logout</div>
+                    <div className="navbar__signout" onClick={this.props.onLogout}><i className="material-icons">exit_to_app</i>Logout</div>
                 </div>
             </div>
         )
