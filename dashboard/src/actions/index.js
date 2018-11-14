@@ -22,6 +22,24 @@ export const logout = () => ({
     type: LOGOUT
 })
 
+export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
+const registerSuccess = () => ({
+    type: REGISTER_SUCCESS,
+})
+
+export const REGISTER_ERROR = 'REGISTER_ERROR';
+const registerError = () => ({
+    type: REGISTER_ERROR
+})
+
+export const REGISTERING = 'REGISTERING';
+const registering = (user, password, secret) => ({
+    type: REGISTERING,
+    user,
+    password,
+    secret
+})
+
 export const login = (user, password) => {
     return async (dispatch) => {
         dispatch(authentication(user, password))
@@ -32,6 +50,26 @@ export const login = (user, password) => {
                 'Accept': '*/*'
             },
             body: JSON.stringify({ user, password })
+        });
+        const json = await response.json();
+        if (json.auth === true) {
+            dispatch(registerSuccess());
+        } else {
+            dispatch(registerError());
+        }
+    }
+}
+
+export const register = (user, password, secret) => {
+    return async (dispatch) => {
+        dispatch(registering(user, password, secret))
+        const response = await fetch('http://127.0.0.1:4000/user/register', {
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': '*/*'
+            },
+            body: JSON.stringify({ user, password, secret })
         });
         const json = await response.json();
         if (json.auth === true) {

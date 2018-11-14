@@ -69,3 +69,23 @@
 .failure .login__modal {
     border: 2px solid #f06292;
 }
+
+.login__register-button {
+    opacity: 0.87;
+    font-family: AvenirNext-Medium;
+    font-size: 14px;
+    color: #C5C5C5;
+    letter-spacing: 0.75px;
+    position: absolute;
+    bottom: 80px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.login__register-button:hover {
+    opacity: 0.60;
+}
+
+.login__register-button:active {
+    opacity: 0.4;
+}

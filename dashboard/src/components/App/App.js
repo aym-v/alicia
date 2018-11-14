@@ -3,11 +3,11 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Ad from '../Ad/Ad'
 import Ads from '../Ads/Ads'
 import LoginContainer from '../../containers/LoginContainer'
-import Register from '../Register/Register'
 import AddButton from '../AddButton/AddButton'
 import './App.css'
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
 import NavBarContainer from '../../containers/NavBarContainer';
+import RegisterContainer from '../../containers/RegisterContainer';
 
 class App extends Component {
   render() {
@@ -15,7 +15,7 @@ class App extends Component {
       <Router>
         <div>
           <Route path="/login" component={LoginContainer} />
-          <Route path="/register" component={Register} />
+          <Route path="/register" component={RegisterContainer} />
           <PrivateRoute path="/ads" component={NavBarContainer} />
           <PrivateRoute path="/ads" component={AddButton} />
           <Switch>
