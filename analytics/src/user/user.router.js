@@ -4,10 +4,14 @@ const model = require('./user.model');
 const router = new Router();
 
 router.post('/user/register', async (req, res) => {
-    const { user, password } = req.body;
+    const { user, password, secret } = req.body;
     try {
-        await model.create(user, password);
-        res.json({user, password})
+        if (secret === process.env.REGISTER_SECRET) {
+            await model.create(user, password);
+            res.json({user, password})
+        } else {
+            throw new Error('Wrong register secret')
+        }
     } catch (err) {
         res.status(500).end()
     }
