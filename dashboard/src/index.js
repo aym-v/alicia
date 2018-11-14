@@ -9,7 +9,14 @@ import './index.css'
 
 const store = createStore(reducer, applyMiddleware(
   thunkMiddleware
-))
+));
+
+store.subscribe(
+  () => {
+    const state = store.getState()
+    localStorage.setItem('token', state.auth.token)
+  }
+)
 
 render(
   <Provider store={store}>
