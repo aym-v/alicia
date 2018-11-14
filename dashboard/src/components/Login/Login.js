@@ -12,7 +12,6 @@ class Login extends Component {
 
     componentDidUpdate() {
         if (!this.props.error && this.props.token) {
-            localStorage.setItem('token', this.props.token);
             this.props.history.push("/ads");
         }
     }
