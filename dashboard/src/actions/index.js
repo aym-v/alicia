@@ -6,9 +6,10 @@ const authentication = (user, password) => ({
 })
 
 export const AUTHENTICATION_SUCCESS = 'AUTHENTICATION_SUCCESS';
-const authenticationSuccess = (token) => ({
+const authenticationSuccess = (token, user) => ({
     type: AUTHENTICATION_SUCCESS,
-    token
+    token,
+    user
 })
 
 export const AUTHENTICATION_ERROR = 'AUTHENTICATION_ERROR';
@@ -34,7 +35,7 @@ export const login = (user, password) => {
         });
         const json = await response.json();
         if (json.auth === true) {
-            dispatch(authenticationSuccess(json.token));
+            dispatch(authenticationSuccess(json.token, user));
         } else {
             dispatch(authenticationError());
         }

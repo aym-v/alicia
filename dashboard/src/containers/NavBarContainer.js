@@ -4,7 +4,8 @@ import { logout } from '../actions'
 
 const mapStateToProps = (state) => {
     return {
-        token: state.auth.token ? true : false
+        token: state.auth.token ? true : false,
+        user: state.auth.user
     }
 }
 

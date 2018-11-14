@@ -39,7 +39,7 @@ class NavBar extends Component {
 
 
     render() {
-        const { user = 'Alicia', picture = 'https://randomuser.me/api/portraits/women/90.jpg' } = this.props;
+        const { user, picture = 'https://randomuser.me/api/portraits/women/90.jpg' } = this.props;
         return (
             <div className={`navbar${this.state.showDropDown ? ' dropdown' : ''}`}>
                 <div className="navbar__logo">

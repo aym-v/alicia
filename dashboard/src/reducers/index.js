@@ -26,7 +26,8 @@ const reducer = (previousState = initialState, action) => {
                     ...previousState.auth,
                     isFetching: false,
                     error: false,
-                    token: action.token
+                    token: action.token,
+                    user: action.user
                 }
             }
         case AUTHENTICATION_ERROR:
