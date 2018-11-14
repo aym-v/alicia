@@ -10,6 +10,8 @@ services:
     build: ./analytics
     ports:
       - 4000:3000
+    environment:
+      - REGISTER_SECRET=secret
   postgres:
     image: postgres
     ports:
