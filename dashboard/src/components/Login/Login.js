@@ -47,6 +47,7 @@ class Login extends Component {
                     </form>
                     <button onClick={() => this.props.onClick(this.state.username, this.state.password)}>{button}</button>
                 </div>
+                <div onClick={() => this.props.history.push('/register')} className={"login__register-button"}>Register</div>
             </div>
         )
     }
