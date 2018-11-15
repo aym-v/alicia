@@ -118,3 +118,7 @@ button {
         transform: translateY(-150%)
     }
 }
+
+.failure .modal {
+    border: 2px solid #f06292;
+}

@@ -66,10 +66,6 @@
     outline: none;
 }
 
-.failure .login__modal {
-    border: 2px solid #f06292;
-}
-
 .login__register-button {
     opacity: 0.87;
     font-family: AvenirNext-Medium;
