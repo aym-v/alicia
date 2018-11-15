@@ -35,13 +35,10 @@ const registerError = () => ({
 export const REGISTERING = 'REGISTERING';
 const registering = (user, password, secret) => ({
     type: REGISTERING,
-    user,
-    password,
-    secret
 })
 
 export const login = (user, password) => {
-    return async (dispatch) => {
+    return async dispatch => {
         dispatch(authentication(user, password))
         const response = await fetch('http://127.0.0.1:4000/user/authenticate', {
             method: 'post',
@@ -53,16 +50,16 @@ export const login = (user, password) => {
         });
         const json = await response.json();
         if (json.auth === true) {
-            dispatch(registerSuccess());
+            dispatch(authenticationSuccess(json.token, user));
         } else {
-            dispatch(registerError());
+            dispatch(authenticationError());
         }
     }
 }
 
 export const register = (user, password, secret) => {
-    return async (dispatch) => {
-        dispatch(registering(user, password, secret))
+    return async dispatch => {
+        dispatch(registering())
         const response = await fetch('http://127.0.0.1:4000/user/register', {
             method: 'post',
             headers: {
@@ -72,10 +69,10 @@ export const register = (user, password, secret) => {
             body: JSON.stringify({ user, password, secret })
         });
         const json = await response.json();
-        if (json.auth === true) {
-            dispatch(authenticationSuccess(json.token, user));
+        if (json.register === 'success') {
+            dispatch(registerSuccess());
         } else {
-            dispatch(authenticationError());
+            dispatch(registerError());
         }
     }
 }
