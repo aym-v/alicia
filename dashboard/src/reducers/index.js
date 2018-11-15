@@ -78,6 +78,11 @@ const reducer = (previousState = initialState, action) => {
             return {
                 ...previousState,
                 auth: initialState.auth,
+                register: {
+                    isFetching: false,
+                    error: false,
+                    registered: false
+                }
             }
         default:
             return previousState
