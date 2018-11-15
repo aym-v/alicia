@@ -8,9 +8,9 @@ router.post('/user/register', async (req, res) => {
     try {
         if (secret === process.env.REGISTER_SECRET) {
             await model.create(user, password);
-            res.json({user, password})
+            res.json({register: 'success'})
         } else {
-            throw new Error('Wrong register secret')
+            res.json({register: 'failure'})
         }
     } catch (err) {
         res.status(500).end()
