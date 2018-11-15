@@ -10,8 +10,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onClick: (username, password) => {
-            dispatch(register(username, password))
+        onClick: (username, password, secret) => {
+            dispatch(register(username, password, secret))
         }
     }
 }
