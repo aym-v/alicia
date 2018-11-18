@@ -52,7 +52,6 @@ class NavBar extends Component {
                 <div onClick={this.triggerDropdown} className="navbar__profile">
                     <div className="navbar__username">Hi, {user}</div>
                     <div className="navbar__dropdown">
-                        <img src={picture} alt="profile" className="navbar__picture"></img>
                         <div className="navbar__arrow"><Arrow></Arrow></div>
                     </div>
                 </div>

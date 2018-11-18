@@ -78,7 +78,7 @@
     display: flex;
     align-items: center;
     cursor: pointer;
-    justify-content: flex-end;
+    justify-content: space-between;
     padding-left: 32px;
     padding-right: 32px;
     transition: .195s var(--ease);
@@ -103,6 +103,7 @@
 }
 
 .navbar__username {
+    margin-right: 8px;
     opacity: 0.87;
     font-family: 'AvenirNext';
     font-size: 14px;
@@ -115,14 +116,6 @@
     height: 100%;
     display: flex;
     align-items: center;
-}
-
-.navbar__picture {
-    width: 32px;
-    height: 32px;
-    border-radius: 100px;
-    margin-right: 16px;
-    margin-left: 16px;
 }
 
 .navbar__dropdown-menu {
