@@ -1,4 +1,4 @@
-import { AUTHENTICATION, AUTHENTICATION_SUCCESS, AUTHENTICATION_ERROR, LOGOUT, REGISTERING, REGISTER_SUCCESS, REGISTER_ERROR } from '../actions'
+import { AUTHENTICATION, AUTHENTICATION_SUCCESS, AUTHENTICATION_ERROR, LOGOUT, REGISTERING, REGISTER_SUCCESS, REGISTER_ERROR, FETCHING_ADS, FETCHING_ADS_SUCCESS, FETCHING_ADS_ERROR } from '../actions'
 
 const initialState = {
     auth: {
@@ -10,6 +10,11 @@ const initialState = {
         isFetching: false,
         error: false,
         registered: false
+    },
+    ads: {
+        isFetching: false,
+        error: false,
+        list: []
     }
 }
 
@@ -82,6 +87,31 @@ const reducer = (previousState = initialState, action) => {
                     isFetching: false,
                     error: false,
                     registered: false
+                }
+            }
+        case FETCHING_ADS:
+            return {
+                ...previousState,
+                ads: {
+                    isFetching: true,
+                    error: false
+                }
+            }
+        case FETCHING_ADS_SUCCESS:
+            return {
+                ...previousState,
+                ads: {
+                    list: action.ads,
+                    isFetching: false,
+                    error: false
+                }
+            }
+        case FETCHING_ADS_ERROR:
+            return {
+                ...previousState,
+                ads: {
+                    isFetching: false,
+                    error: true
                 }
             }
         default:
